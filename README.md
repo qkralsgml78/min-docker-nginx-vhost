@@ -33,7 +33,7 @@ FROM nginx
 COPY index.html /usr/share/nginx/html
 ```
 
-## build & Run
+## build
 ```
 docker build -t minhee84/lb:0.1.0 -f lb/Dockerfile lb/
 docker build -t minhee84/serv-a:0.1.0 -f serv-a/Dockerfile serv-a/
@@ -52,7 +52,7 @@ docker push minhee84/serv-b:0.1.0
 docker push minhee84/lb:0.1.0
 ```
 
-# network connet
+# network connet & Run
 ```
 docker run -d --name serv-a --network lb-net minhee84/serv-a:0.1.0
 docker run -d --name serv-b --network lb-net minhee84/serv-b:0.1.0
